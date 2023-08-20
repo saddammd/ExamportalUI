@@ -1,0 +1,24 @@
+    <div class="card">
+        <div class="content" id="contentid" (click)="flip()">
+            <div class="front">
+                にほんご
+            </div>
+            <div class="back">
+                Japanese
+            </div>
+        </div>
+    </div>
+    <!--Card Section Ends -->
+
+<div class="container">
+    <!-- Buttons -->
+    <div class="buttons d-grid gap-2">
+        <button type="button" (click)="flip()" class=" btn btn-custom-success btn-lg px-4 me-md-2">Flip</button>
+
+        <div class="roundbutton">
+            <a href="#" class="previous round">&#8249;</a>
+            <P style="margin:10%;">1/24</P>
+            <a href="#" class="next round">&#8250;</a>
+        </div>
+    </div>
+</div>

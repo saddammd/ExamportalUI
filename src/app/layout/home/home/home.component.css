@@ -1,0 +1,38 @@
+body{
+    background-color: #54b689;
+}
+
+.btn-custom-success {
+    background-color: #54b689;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.text-body-success{
+    color: #54b689;
+}
+
+.btn-custom-success:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(1.0);
+}
+
+.btn-custom-outline-success{
+    border-color: #54b689;   
+    border-radius: 25px;
+}
+.btn-custom-outline-success:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(1.0);
+}
+
+img{
+    opacity: 0.8;
+}
+
+img{
+    opacity: 0.8;
+    opacity: 0.9;
+}

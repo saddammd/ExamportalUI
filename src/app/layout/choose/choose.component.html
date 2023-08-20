@@ -1,0 +1,21 @@
+<div class="conainer">
+  <div class="content">
+    <h3>Q. あなたのなまえはなんです</h3>
+
+    <div class="form-group row">
+      <div class="col-sm-12 form-content" *ngFor="let shoe of typesOfShoes">
+        <div class="form-check form-check-inline" style="margin: 10px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">
+            <p (click)="selectedAnswer()">{{shoe}}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="roundbutton">
+      <a href="#" class="previous round">&#8249;</a>
+      <P style="margin-top:5%; color: black;">1/24</P>
+      <a href="#" class="next round">&#8250;</a>
+  </div>
+  </div>
+  </div>

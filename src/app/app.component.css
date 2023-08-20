@@ -1,0 +1,22 @@
+.menu-color{
+    color: #787a7b
+}
+
+.navbar{
+    font-family: -apple-system;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+   }
+.nav-link:hover{
+   color: #54b689;
+   transition: all 0.2s;
+   border-bottom: 2px solid;
+   border-width: 0.1px;
+}
+
+p{
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    color: #f2fbfb;
+}

@@ -1,0 +1,76 @@
+<mat-drawer-container class="example-container" style="margin-top: 1%;" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <div class="sideheader px-3">
+
+            <h3>Chapters</h3>
+
+            <mat-icon class="close" aria-hidden="false" aria-label="Example close icon" fontIcon="close"
+                (click)="drawer.toggle();">
+            </mat-icon>
+
+        </div>
+        <hr>
+
+        <!-- Trying accordian -->
+        <mat-accordion>
+            <div *ngIf="lessonData !== undefined && lessonData !== null">
+                <div *ngFor="let title of lessonData.data.content">
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <strong>
+                                    {{title.name}}
+                                </strong>
+
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+
+                        <mat-list role="list">
+                            <div *ngFor="let videovalue of title.video">
+                                <mat-list-item role="listitem"
+                                    (click)="drawer.toggle();loadVideoValue(videovalue.url)"><a
+                                        routerLink="/members/lessons/video">Video in Hindi</a></mat-list-item>
+
+                                <mat-list-item role="listitem"
+                                    (click)="drawer.toggle();loadVideoValue(videovalue.url2)"><a
+                                        routerLink="/members/lessons/video">Video in Tamil</a></mat-list-item>
+                                    </div>
+                                    
+                                <mat-list-item role="listitem" (click)="drawer.toggle(); loadVocabularyValue(title.vocabulary)"><a
+                                        routerLink="/members/lessons/vocabulary">Exercise 1</a></mat-list-item>
+                           
+                            <!--<mat-list-item role="listitem" (click)="drawer.toggle();"><a routerLink="/members/lessons/reading">Exercise 2</a></mat-list-item>
+                    <mat-list-item role="listitem" (click)="drawer.toggle();"><a routerLink="/members/lessons/choose">Exercise 3</a></mat-list-item>
+            -->
+
+                        </mat-list>
+
+                        <br>
+                        <br>
+                        <br>
+                    </mat-expansion-panel>
+                </div>
+            </div>
+        </mat-accordion>
+    </mat-drawer>
+
+    <!-- End accordian -->
+
+
+    <div class="example-sidenav-content">
+        <div class="sidemenu">
+            <button type="button" class="btn btn-custom-outline-success px-3 text-body-success"
+                (click)="drawer.toggle();">
+
+                <mat-icon aria-hidden="false" aria-label="Example menu icon" fontIcon="menu">
+                </mat-icon>
+            </button>
+        </div>
+        <div class="dynamic-content">
+
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</mat-drawer-container>

@@ -1,0 +1,84 @@
+.container {
+    position: absolute;
+}
+
+.content {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: -188px;
+    max-width: 50Vw;
+}
+
+.form-content{
+    border: solid 1px; 
+    margin-top: 1%;
+    margin-bottom: 1%; 
+    border-radius: 2%;
+    transition: transform .2s;
+    background-color: #28387a;
+}
+
+p{
+    color: #ffffff;
+    font-weight: 100;
+}
+
+h3{
+    color:#28387a;
+}
+
+.form-content:hover{
+    transform: scale(1.05);
+}
+
+.roundbutton {
+    display: flex;
+    justify-content: center
+}
+
+.previous {
+    background-color: black;
+    color: #f1f1f1;
+}
+
+.next {
+    background-color: black;
+    color: #f1f1f1;
+}
+
+.round {
+    border-radius: 100%;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4%;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media only screen and (max-width: 821px) {
+    .content {
+        margin-top: 25%;
+    margin-left: -204px;
+    }
+}
+
+
+@media only screen and (max-width: 541px) {
+    .content {
+    margin-left: -149px;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .content {
+        margin-top: 25%;
+        margin-left: -94px;
+    }
+}
