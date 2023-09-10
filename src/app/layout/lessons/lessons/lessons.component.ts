@@ -42,7 +42,7 @@ export class LessonsComponent {
    return this.lessonservice.getLessonList().subscribe(data=>
       {
       this.lessonData = data;
-      console.log("chapter name from api" +this.lessonData.data.content[0].mcq);
+      console.log("chapter name from api" +this.lessonData.data.content[0].id);
         
          }
           
@@ -68,8 +68,9 @@ export class LessonsComponent {
     this.exercises.loadReadingExercise(reading);
   }
 
-  loadQuizValue(mcq: Mcq[]){
-    this.exercises.loadMcqExercise(mcq);
+  loadQuizValue(mcq: Mcq[], lessonId: number){
+   
+    this.exercises.loadMcqExercise(mcq, lessonId);
   }
 
   loadResultValue(id: number){

@@ -1,7 +1,10 @@
 <div class="conainer">
   <div class="content">
 
+    add chapter{{lessonId+1}}<br>
+    add screen name "QUIZ"
     <h3>Q{{i+1}}. {{question}}</h3>
+   implement score {{score}}
 
     <div class="form-group row">
       <div class="col-sm-12 form-content">
@@ -54,6 +57,7 @@
 
       </div>
     </div>
-  </div> <button type="button" class="btn btn-custom-success btn-lg btn-block">Submit </button>
+  </div> <button type="button" class="btn btn-custom-success btn-lg btn-block"
+  (click)="submitAnswer()">Submit </button>
 
 </div>

@@ -18,6 +18,7 @@ export class ExercisesValueService {
   VideoValue = new BehaviorSubject<string>(null!);
   ReadingValue = new BehaviorSubject<Reading[]>(null!);
   McqValue = new BehaviorSubject<Mcq[]>(null!);
+  LessonIdValue = new BehaviorSubject<number>(null!);
   storage : Storage = localStorage;
   resultId = new BehaviorSubject<string>(null!);
 
@@ -47,9 +48,11 @@ export class ExercisesValueService {
     this.storage.setItem("reading", JSON.stringify(reading));
   }
 
-  loadMcqExercise(mcq: Mcq[]) {
+  loadMcqExercise(mcq: Mcq[], lessonId: number) {
     this.McqValue.next(mcq);
+    this.LessonIdValue.next(lessonId);
     this.storage.setItem("mcq", JSON.stringify(mcq));
+    this.storage.setItem("lessonId", JSON.stringify(this.LessonIdValue))
   }
 
 }

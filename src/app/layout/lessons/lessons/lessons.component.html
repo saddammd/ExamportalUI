@@ -75,7 +75,7 @@
                             <mat-divider></mat-divider>
 
                             <mat-list-item role="listitem"  [routerLinkActive]="['active']" 
-                            (click)="drawer.toggle(); loadQuizValue(title.mcq)">
+                            (click)="drawer.toggle(); loadQuizValue(title.mcq, title.id)">
                                 <a routerLink="/members/lessons/choose/{{i}}">
                                     <i class="fa-solid fa-file-pen"></i>
                                     &nbsp;<span> Quiz </span></a></mat-list-item>
