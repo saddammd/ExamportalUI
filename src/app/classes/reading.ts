@@ -1,9 +1,13 @@
+import { Grammar } from "./grammar"
+
 export interface Reading {
 
     id: number,
-    title: string,
+    subheading: string,
+    heading: string,
     imageUrl: string,
-    content: string
+    content: string,
+    grammar: Grammar[]
     createdDate: string,
     updatedDate: string
 }

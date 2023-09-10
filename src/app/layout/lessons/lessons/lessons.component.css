@@ -47,8 +47,9 @@ mat-drawer-container{
 mat-icon {
    margin-top: 5%;
     font-size: 33px;  
-    color: #54b689;;
+    color: #54b689;
 }
+
 
 .sidemenu{
 
@@ -69,10 +70,42 @@ strong{
 
 .btn-custom-outline-success{
     border-color: #54b689;   
-    margin-top: 5%;
+    margin-top: 30%;
+    margin-left: 10%;
 }
 .btn-custom-outline-success:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(0.5);
     transform: scale(1.0);
+}
+
+a{
+  text-decoration: none;
+  color: #375796;
+}
+
+i{
+  color:  #54b689;
+}
+
+mat-list-item:hover{  
+  box-shadow: 0 0 10px rgba(84, 182, 137, 0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(1.0);
+}
+
+
+.active {
+  font-weight: bold;
+  background-color: #54b689;
+  
+  transform: scale(1.1);
+}
+
+.active i{
+  color: #ffffff;
+}
+
+.active span{
+  color: #ffffff;
 }

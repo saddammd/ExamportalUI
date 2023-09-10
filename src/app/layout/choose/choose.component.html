@@ -1,21 +1,59 @@
 <div class="conainer">
   <div class="content">
-    <h3>Q. あなたのなまえはなんです</h3>
+
+    <h3>Q{{i+1}}. {{question}}</h3>
 
     <div class="form-group row">
-      <div class="col-sm-12 form-content" *ngFor="let shoe of typesOfShoes">
+      <div class="col-sm-12 form-content">
         <div class="form-check form-check-inline" style="margin: 10px;">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" #opt1 value={{option1}}
+          (click)="selectedAnswer(opt1)">
           <label class="form-check-label" for="inlineRadio1">
-            <p (click)="selectedAnswer()">{{shoe}}</p>
+            <p>{{option1}}</p>
           </label>
         </div>
       </div>
+
+      <div class="col-sm-12 form-content">
+        <div class="form-check form-check-inline" style="margin: 10px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" #opt2 value={{option2}}
+          (click)="selectedAnswer(opt2)">
+          <label class="form-check-label" for="inlineRadio1">
+            <p>{{option2}}</p>
+          </label>
+        </div>
+      </div>
+
+      <div class="col-sm-12 form-content">
+        <div class="form-check form-check-inline" style="margin: 10px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" #opt3 value={{option3}}
+          (click)="selectedAnswer(opt3)" >
+          <label class="form-check-label" for="inlineRadio1">
+            <p>{{option3}}</p>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 form-content">
+        <div class="form-check form-check-inline" style="margin: 10px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" #opt4 value={{option4}}
+          (click)="selectedAnswer(opt4)">
+          <label class="form-check-label" for="inlineRadio1">
+            <p>{{option4}}</p>
+          </label>
+        </div>
+
+      </div>
     </div>
     <div class="roundbutton">
-      <a href="#" class="previous round">&#8249;</a>
-      <P style="margin-top:5%; color: black;">1/24</P>
-      <a href="#" class="next round">&#8250;</a>
-  </div>
-  </div>
-  </div>
+      <div class="roundbutton">
+        <button class="previous round" (click)="prevValue(opt1,opt2,opt3,opt4)">&#8249;</button>
+        <P style="margin:10%; color: black;">{{i+1}}/{{totalitems}}</P>
+        <button class="next round" (click)="nextValue(opt1,opt2,opt3,opt4)">&#8250;</button>
+
+      </div>
+    </div>
+  </div> <button type="button" class="btn btn-custom-success btn-lg btn-block">Submit </button>
+
+</div>

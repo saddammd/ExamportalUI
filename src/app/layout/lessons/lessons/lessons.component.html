@@ -2,7 +2,8 @@
     <mat-drawer #drawer class="example-sidenav" mode="over">
         <div class="sideheader px-3">
 
-            <h3>Chapters</h3>
+            <h3>
+                Classroom</h3>
 
             <mat-icon class="close" aria-hidden="false" aria-label="Example close icon" fontIcon="close"
                 (click)="drawer.toggle();">
@@ -14,12 +15,14 @@
         <!-- Trying accordian -->
         <mat-accordion>
             <div *ngIf="lessonData !== undefined && lessonData !== null">
-                <div *ngFor="let title of lessonData.data.content">
+                <div *ngFor="let title of lessonData.data.content;  let i = index">
                     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <strong>
-                                    {{title.name}}
+                                    {{title.name}} &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="fa-regular fa-circle-check" [hidden]="disp" style="color: #52b889;"></i>
+                                    <i class="fa-solid fa-circle-check" style="color: #54b689;"></i>
                                 </strong>
 
                             </mat-panel-title>
@@ -28,27 +31,67 @@
 
                         <mat-list role="list">
                             <div *ngFor="let videovalue of title.video">
-                                <mat-list-item role="listitem"
-                                    (click)="drawer.toggle();loadVideoValue(videovalue.url)"><a
-                                        routerLink="/members/lessons/video">Video in Hindi</a></mat-list-item>
+                                <mat-list-item role="listitem" [routerLinkActive]="['active']"
+                                    (click)="drawer.toggle(); ">
+                                    <a routerLink="/members/lessons/video/{{i}}"
+                                    (click) = "loadVideoValue(videovalue.url)">
 
-                                <mat-list-item role="listitem"
-                                    (click)="drawer.toggle();loadVideoValue(videovalue.url2)"><a
-                                        routerLink="/members/lessons/video">Video in Tamil</a></mat-list-item>
-                                    </div>
+                                        <i class="fa-solid fa-video"></i>
+                                        &nbsp;<span> Video Lesson (Hindi) </span>
+                                        </a>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+
+
+                                <mat-list-item role="listitem" [routerLinkActive]="['active']"
+                                    (click)="drawer.toggle();">
+                                    <a routerLink="/members/lessons/video/{{i+2}}"
+                                    (click) = "loadVideoValue(videovalue.url)">
+
+                                        <i class="fa-solid fa-video"></i>
+                                        &nbsp;<span> Video Lesson (Tamil) </span> </a></mat-list-item>
+                                <mat-divider></mat-divider>
+                            </div>
+
+                            <mat-list-item role="listitem"  [routerLinkActive]="['active']"
+                                (click)="drawer.toggle(); loadVocabularyValue(title.vocabulary)"><a
+                                    routerLink="/members/lessons/vocabulary/{{i}}">
+                                    <i class="fa-regular fa-newspaper"></i>
+                                    &nbsp; <span> Vocabular J-E </span> </a></mat-list-item>
+                            <mat-divider></mat-divider>
+
+                            <mat-list-item role="listitem"  [routerLinkActive]="['active']"
+                                (click)="drawer.toggle(); loadVocabularyetojValue(title.vocabulary)"><a
+                                    routerLink="/members/lessons/vocabularyetoj/{{i}}">
+                                    <i class="fa-regular fa-newspaper"></i>
+                                    &nbsp; <span>Vocabular E-J</span></a></mat-list-item>
+                            <mat-divider></mat-divider>
+
+                            <mat-list-item role="listitem"  [routerLinkActive]="['active']" 
+                            (click)="drawer.toggle(); loadReadingValue(title.reading)">
+                                <a routerLink="/members/lessons/reading/{{i}}">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    &nbsp; <span>Reading</span></a></mat-list-item>
+                            <mat-divider></mat-divider>
+
+                            <mat-list-item role="listitem"  [routerLinkActive]="['active']" 
+                            (click)="drawer.toggle(); loadQuizValue(title.mcq)">
+                                <a routerLink="/members/lessons/choose/{{i}}">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                    &nbsp;<span> Quiz </span></a></mat-list-item>
+                            <mat-divider></mat-divider>
+
+                            <mat-list-item role="listitem" [routerLinkActive]="['active']"
+                            (click)="drawer.toggle()">
+                                <a routerLink="/members/lessons/result/{{i}}"
+                                (click)="loadResultValue(i)">
                                     
-                                <mat-list-item role="listitem" (click)="drawer.toggle(); loadVocabularyValue(title.vocabulary)"><a
-                                        routerLink="/members/lessons/vocabulary">Exercise 1</a></mat-list-item>
-                           
-                            <!--<mat-list-item role="listitem" (click)="drawer.toggle();"><a routerLink="/members/lessons/reading">Exercise 2</a></mat-list-item>
-                    <mat-list-item role="listitem" (click)="drawer.toggle();"><a routerLink="/members/lessons/choose">Exercise 3</a></mat-list-item>
-            -->
+                                    <i class="fa-solid fa-medal"></i>
+                                    
+                                    &nbsp;<span> Result </span></a></mat-list-item>
+                            <mat-divider></mat-divider>
 
                         </mat-list>
-
-                        <br>
-                        <br>
-                        <br>
                     </mat-expansion-panel>
                 </div>
             </div>
@@ -68,7 +111,6 @@
             </button>
         </div>
         <div class="dynamic-content">
-
             <router-outlet></router-outlet>
 
         </div>

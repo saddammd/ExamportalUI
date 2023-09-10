@@ -18,6 +18,14 @@
     background-color: #28387a;
 }
 
+.btn-custom-success {
+    background-color: #54b689;
+    color: #ffffff;
+    box-shadow:inset;
+    margin-top: 10%;
+    margin-left: 400%;
+}
+
 p{
     color: #ffffff;
     font-weight: 100;
@@ -33,7 +41,9 @@ h3{
 
 .roundbutton {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .previous {
@@ -62,23 +72,88 @@ a:hover {
     color: black;
 }
 
+@media only screen and (max-width: 1281px) {
+    .btn-custom-success {
+        margin-top: 25%;
+    margin-left: 450%;
+ }
+}
+
+@media only screen and (max-width: 1025px) {
+    .btn-custom-success {
+        margin-top: 15%;
+        margin-left: 400%;
+ }
+}
+
+@media only screen and (max-width: 913px) {
+    .content {
+        margin-top: 15%;
+    }
+    .btn-custom-success {
+        margin-top: 25%;
+        margin-left: 280%;
+ }
+}
+
 @media only screen and (max-width: 821px) {
     .content {
         margin-top: 25%;
     margin-left: -204px;
     }
+    .btn-custom-success {
+        margin-top: 25%;
+        margin-left: 280%;
+    }
 }
 
 
+@media only screen and (max-width: 769px) {
+    .btn-custom-success {
+        margin-top: 25%;
+        margin-left: 280%;
+ }
+}
+
 @media only screen and (max-width: 541px) {
     .content {
-    margin-left: -149px;
+    margin-left: -42px;
     }
+    .btn-custom-success {
+        margin-top: 25%;
+        margin-left: 200%;
+
+ }
+}
+
+@media only screen and (max-width: 415px) {
+       .btn-custom-success {
+        margin-top: 15%;
+        margin-left: 130%;
+    }
+}
+
+@media only screen and (max-width: 391px) {
+    .btn-custom-success {
+        margin-top: 15%;
+        margin-left: 120%;
+ }
 }
 
 @media only screen and (max-width: 376px) {
     .content {
         margin-top: 25%;
-        margin-left: -94px;
+        margin-left: -42px;
     }
+    .btn-custom-success {
+        margin-top: 15%;
+        margin-left: 110%;
+    }
+}
+
+@media only screen and (max-width: 281px) {
+    .btn-custom-success {
+        margin-top: 530%;
+        margin-left: -20%;
+ }
 }

@@ -8,13 +8,15 @@ import { Data } from '../classes/data';
   providedIn: 'root'
 })
 export class LessonService {
-
+ 
+  
   constructor(private httpclient: HttpClient) { }
 
   private baseUrl = "http://localhost:5000/examportal/examportal/lesson"
+  private videoUrl = "http://localhost:5000/examportal/videos/video/"
 
   getLessonList(): Observable<Data>{
       return this.httpclient.get<Data>(this.baseUrl);
-   
   }
+
 }

@@ -14,11 +14,13 @@ import { ChaptersComponent } from './layout/lessons/chapters/chapters.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReadingComponent } from './layout/reading/reading.component';
 import { ChooseComponent } from './layout/choose/choose.component';
-import { VideoComponent } from './layout/video/video.component';
+import { VideoComponent } from './layout/video/video.component'
 import { VocabularyComponent } from './layout/vocabulary/vocabulary.component';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
+import { VocabularyetojComponent } from './layout/vocabularyetoj/vocabularyetoj.component';
+import { ResultComponent } from './layout/result/result.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
     ChooseComponent,
     VideoComponent,
     VocabularyComponent,
+    VocabularyetojComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

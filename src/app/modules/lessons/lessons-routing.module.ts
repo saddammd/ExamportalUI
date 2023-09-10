@@ -6,21 +6,30 @@ const routes: Routes = [
   {path:'', component: LessonsComponent,
   children:[
     {
-      path:'vocabulary', 
+      path:'vocabulary/:id', 
       loadChildren:()=>import('../vocabulary/vocabulary.module').then(m=>m.VocabularyModule)
     },
     {
-      path:'video', 
+      path:'video/:id', 
       loadChildren:()=>import('../video/video.module').then(m=>m.VideoModule)
     },
     {
-      path:'reading', 
+      path:'reading/:id', 
       loadChildren:()=>import('../reading/reading.module').then(m=>m.ReadingModule)
     },
     {
-      path:'choose', 
+      path:'choose/:id', 
       loadChildren:()=>import('../choose/choose.module').then(m=>m.ChooseModule)
     },
+    {
+      path:'vocabularyetoj/:id',
+      loadChildren:()=>import('../vocabularyetoj/vocabularyetoj.module').then(m=>m.VocabularyetojModule)
+    },
+    {
+      path:'result/:id',
+      loadChildren:()=>import('../result/result.module').then(m=>m.ResultModule)
+    }
+
    
   ]
 }

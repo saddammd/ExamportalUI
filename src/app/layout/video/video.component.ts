@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { EMPTY } from 'rxjs';
 import { Video } from 'src/app/classes/video';
 import { ExercisesValueService } from 'src/app/services/exercises-value.service';
+import { LessonService } from 'src/app/services/lesson.service';
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
@@ -9,26 +11,28 @@ import { ExercisesValueService } from 'src/app/services/exercises-value.service'
 })
 export class VideoComponent {
 
-  
+
   safeSrc!: SafeResourceUrl;
-  videoobject!: string;
+  url!: string;
+
 
   ngOnInit(): void {
-    this.getUrlValue();
-    
-    
   }
 
   constructor(private exercises: ExercisesValueService,
-    private sanitizer: DomSanitizer) {}
-  
-
-getUrlValue(){
-    this.exercises.VideoValue.subscribe(data=>
-      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(data)
-
-    );
-    
-  
+    private sanitizer: DomSanitizer) {
+    this.getUrlValue();
+    if(this.exercises.VideoValue.value === null){
+      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.exercises.storage.getItem("video")!);
+    }
   }
-}
+
+
+  getUrlValue() {
+      this.exercises.VideoValue.subscribe(data => {
+        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(data);
+      }
+      
+      );
+    }
+  }

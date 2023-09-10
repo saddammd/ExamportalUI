@@ -1,11 +1,13 @@
     <div class="card">
         <div class="content" id="contentid" (click)="flip()">
             <div class="front">
-                にほんご
+                {{hiraganaValue}}
             </div>
             <div class="back">
-                Japanese
+              {{RomajiValue}} <br>
+               <p class="english" style="font-style: italic; font-size: 20px;"> {{englishValue}} </p>
             </div>
+            
         </div>
     </div>
     <!--Card Section Ends -->
@@ -16,9 +18,9 @@
         <button type="button" (click)="flip()" class=" btn btn-custom-success btn-lg px-4 me-md-2">Flip</button>
 
         <div class="roundbutton">
-            <a href="#" class="previous round">&#8249;</a>
-            <P style="margin:10%;">1/24</P>
-            <a href="#" class="next round">&#8250;</a>
+            <button class="previous round" (click)="prevValue()">&#8249;</button>
+            <P style="margin:10%;">{{i+1}}/{{totalitems}}</P>
+            <button class="next round" (click)="nextValue()">&#8250;</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="content" id="contentid" (click)="flip()">
+        <div class="front">
+            {{englishValue}}
+        </div>
+        <div class="back">
+          {{hiraganaValue}} <br>
+           <p class="english" style="font-style: italic; font-size: 20px;"> {{RomajiValue}} </p>
+        </div>
+        
+    </div>
+</div>
+<!--Card Section Ends -->
+
+<div class="container">
+<!-- Buttons -->
+<div class="buttons d-grid gap-2">
+    <button type="button" (click)="flip()" class=" btn btn-custom-success btn-lg px-4 me-md-2">Flip</button>
+
+    <div class="roundbutton">
+        <button class="previous round" (click)="prevValue()">&#8249;</button>
+        <P style="margin:10%;">{{i+1}}/{{totalitems}}</P>
+        <button class="next round" (click)="nextValue()">&#8250;</button>
+    </div>
+</div>
+</div>

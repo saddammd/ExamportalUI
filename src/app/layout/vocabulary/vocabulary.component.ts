@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Vocabulary } from 'src/app/classes/vocabulary';
+import { ExercisesValueService } from 'src/app/services/exercises-value.service';
 
 @Component({
   selector: 'app-vocabulary',
@@ -6,6 +8,59 @@ import { Component } from '@angular/core';
   styleUrls: ['./vocabulary.component.css']
 })
 export class VocabularyComponent {
+
+  englishValue!: string;
+  hiraganaValue!: string;
+  RomajiValue!: string;
+  vocabValue!: Vocabulary[];
+  totalitems : number = 0;
+  i: number = 0;
+
+  constructor(private exercise: ExercisesValueService){}
+
+  ngOnInit(): void {
+     this.loadVocabularyLesson();
+     this.loadDefaultVocabularyLesson();
+      }
+
+  loadVocabularyLesson(){
+    this.exercise.VocabularyValue.subscribe(data=>{
+      this.vocabValue = data;
+      this.RomajiValue = this.vocabValue[0].romaji_character;
+      this.englishValue = this.vocabValue[0].english_character;
+      this.hiraganaValue = this.vocabValue[0].hiragana_character;
+      this.totalitems = this.vocabValue.length;
+    }
+    );
+  }
+  loadDefaultVocabularyLesson(){
+
+    if(this.vocabValue === null){
+     this.vocabValue = JSON.parse(this.exercise.storage.getItem('vocabulary')!);
+     this.RomajiValue = this.vocabValue[0].romaji_character;
+      this.englishValue = this.vocabValue[0].english_character;
+      this.hiraganaValue = this.vocabValue[0].hiragana_character;
+      this.totalitems = this.vocabValue.length;
+
+    }
+  }
+  nextValue(){
+    if(this.i<=this.vocabValue.length){
+      this.i++;
+   this.hiraganaValue = this.vocabValue[this.i].hiragana_character;
+    this.englishValue = this.vocabValue[this.i].english_character;
+    this.RomajiValue = this.vocabValue[this.i].romaji_character;
+    }
+  }
+
+  prevValue(){
+    if(this.i>0){
+      this.i--;
+    this.hiraganaValue = this.vocabValue[this.i].hiragana_character;
+    this.englishValue = this.vocabValue[this.i].english_character;
+    this.RomajiValue = this.vocabValue[this.i].romaji_character;
+    }
+  }
 
   rotate: string = 'rotateY( 0deg )';
 
