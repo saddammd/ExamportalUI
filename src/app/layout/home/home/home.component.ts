@@ -11,6 +11,6 @@ export class HomeComponent {
   constructor(private router: Router){}
 
   videos(){
-    this.router.navigate(['members','lessons']);
+    this.router.navigate(['members','lessons','chapters']);
   }
 }

@@ -1,0 +1,9 @@
+<!-- modal-dialog.component.html -->
+<div class="modal" [ngStyle]="{'display': showModal ? 'block' : 'none'}">
+    <div class="modal-content">
+      <h2>Result 🏆</h2>
+      <p>You Scored: {{score+1}} / {{totalquesitons}}</p>
+      <button (click)="closeModal()">Show Details</button>
+    </div>
+  </div>
+  

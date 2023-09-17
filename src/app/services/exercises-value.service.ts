@@ -5,6 +5,7 @@ import { Vocabulary } from '../classes/vocabulary';
 import { Reading } from '../classes/reading';
 import { Mcq } from '../classes/mcq';
 import { Vocabularyetoj } from '../classes/vocabularyetoj';
+import { Lesson } from '../classes/lesson';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,10 @@ export class ExercisesValueService {
   ReadingValue = new BehaviorSubject<Reading[]>(null!);
   McqValue = new BehaviorSubject<Mcq[]>(null!);
   LessonIdValue = new BehaviorSubject<number>(null!);
+  ChapterDetails = new BehaviorSubject<Lesson>(null!);
+ 
   storage : Storage = localStorage;
-  resultId = new BehaviorSubject<string>(null!);
+
 
 
 

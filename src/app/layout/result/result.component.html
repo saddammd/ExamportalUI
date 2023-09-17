@@ -1,1 +1,27 @@
-<p>result works!</p>
+<button type="button"
+(click)="backtolesson()">back </button>
+<h2>Lesson {{resultCollectionResponse.resultResponse.content[0].result[0].lessonId}}Test Results</h2>
+<div>
+    <div class="container mt-4">
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Test Taken Date</th>
+                    <th scope="col">View Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let res of resultCollectionResponse.resultResponse.content">
+                    <th scope="row"> {{res.id}}</th>
+                    <td>{{res.createdDate}}</td>
+        
+                    <td>
+                        <a routerLink="/members/lessons/resultdetail/{{res.id}}">View Result</a></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>

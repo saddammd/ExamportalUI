@@ -9,7 +9,13 @@ const routes: Routes = [
       children: [{
         path: 'lessons',
         loadChildren: () => import('./modules/lessons/lessons.module').then(m=>m.LessonsModule)
-      }] },
+      },
+      {
+        path:'admin', 
+        loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)
+      },
+    
+    ] },
       {
         path: '*.*', component:HomeComponent
       }

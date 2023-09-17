@@ -28,6 +28,14 @@ const routes: Routes = [
     {
       path:'result/:id',
       loadChildren:()=>import('../result/result.module').then(m=>m.ResultModule)
+    },
+    {
+      path:'resultdetail/:id', 
+      loadChildren:()=>import('../resultdetail/resultdetail.module').then(m=>m.ResultdetailModule)
+    },
+    {
+      path:'chapters', 
+      loadChildren:()=>import('../chapters/chapters-routing.module' ).then(m=>m.ChaptersRoutingModule)
     }
 
    

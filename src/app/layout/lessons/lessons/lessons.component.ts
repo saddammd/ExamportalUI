@@ -73,12 +73,6 @@ export class LessonsComponent {
     this.exercises.loadMcqExercise(mcq, lessonId);
   }
 
-  loadResultValue(id: number){
-    const resultId = id.toString();
-    this.exercises.resultId.next(resultId);
-        
-         }
-
 }
 
 /*loadvideo(){

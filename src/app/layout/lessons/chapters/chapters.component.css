@@ -1,0 +1,23 @@
+.blinking-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow {
+    animation: blink 1s infinite alternate;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

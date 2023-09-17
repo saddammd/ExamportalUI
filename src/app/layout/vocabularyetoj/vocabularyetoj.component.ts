@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vocabularyetoj } from 'src/app/classes/vocabularyetoj';
 import { ExercisesValueService } from 'src/app/services/exercises-value.service';
 
@@ -16,7 +17,8 @@ export class VocabularyetojComponent {
   totalitems : number = 0;
   i: number = 0;
 
-  constructor(private exercise: ExercisesValueService){}
+  constructor(private exercise: ExercisesValueService,
+              private router: Router){}
 
   ngOnInit(): void {
      this.loadVocabularyLesson();
@@ -30,6 +32,7 @@ export class VocabularyetojComponent {
       this.englishValue = this.vocabetojValue[0].english_character;
       this.hiraganaValue = this.vocabetojValue[0].hiragana_character;
       this.totalitems = this.vocabetojValue.length;
+      
     }
     );
   }
@@ -75,4 +78,7 @@ export class VocabularyetojComponent {
     }
   }
 
+  backtolesson(){
+    this.router.navigate(['members','lessons','chapters']);
+  }
 }

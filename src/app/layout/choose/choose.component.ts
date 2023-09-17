@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Choose } from 'src/app/classes/choose';
 import { Mcq } from 'src/app/classes/mcq';
 import { Result } from 'src/app/classes/result';
@@ -30,11 +30,12 @@ export class ChooseComponent {
   tempResult!: Result;
   lessonId!: string;
   score = 0;
-  
+
 
   constructor(private exercise: ExercisesValueService,
     private resultService: ResultService,
-    private routes: ActivatedRoute) {
+    private routes: ActivatedRoute,
+    private router: Router) {
     this.loadMcqQuestion();
     this.loadDefaultMcqLesson();
     this.lessonId = this.routes.snapshot.paramMap.get('id')!;
@@ -54,7 +55,7 @@ export class ChooseComponent {
       this.tempResult.option2 = this.option2;
       this.tempResult.option3 = this.option3;
       this.tempResult.option4 = this.option4;
-      this.tempResult.lessonId = this.lessonId+1;
+      this.tempResult.lessonId = this.lessonId + 1;
       this.tempResult.questionId = this.i;
       this.addOrUpdateElement(this.result, this.tempResult);
     }
@@ -76,7 +77,7 @@ export class ChooseComponent {
       this.totalitems = this.mcq.length;
       this.storage.clear();
     });
-   
+
   }
 
   loadDefaultMcqLesson() {
@@ -189,35 +190,37 @@ export class ChooseComponent {
 
   }
 
-  calculateTotal(result: Result[]){
-   // Iterate through the array of objects
-for (const obj of result) {
-  // Compare "SubmittedAnswer" with "Answer"
-  if (obj.submittedAnswer === obj.answer) {
-    // If they are equal, increment the score
-    this.score++;
+  calculateTotal(result: Result[]) {
+    // Iterate through the array of objects
+    for (const obj of result) {
+      // Compare "SubmittedAnswer" with "Answer"
+      if (obj.submittedAnswer === obj.answer) {
+        // If they are equal, increment the score
+        this.resultService.score.next(this.score++);
+        this.resultService.totalquestions.next(this.result.length);
+      }
+    }
   }
-}
-    
-    
-      
+
+  backtolesson(){
+    this.router.navigate(['members','lessons','chapters']);
   }
 
   submitAnswer() {
-    
-    this.calculateTotal(this.result);
+
     this.resultService.postResultList(this.result).subscribe(
       (response) => {
-       console.log(response);
+        console.log(response);
       },
-      
+
       (error) => {
         console.log(error);
-      }
+      },
+
 
     );
-
-
+    this.resultService.openDialog.next(true);
+    this.calculateTotal(this.result);
   }
 
 }

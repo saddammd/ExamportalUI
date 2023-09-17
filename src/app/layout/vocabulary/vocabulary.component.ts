@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vocabulary } from 'src/app/classes/vocabulary';
 import { ExercisesValueService } from 'src/app/services/exercises-value.service';
 
@@ -16,7 +17,8 @@ export class VocabularyComponent {
   totalitems : number = 0;
   i: number = 0;
 
-  constructor(private exercise: ExercisesValueService){}
+  constructor(private exercise: ExercisesValueService,
+              private router: Router){}
 
   ngOnInit(): void {
      this.loadVocabularyLesson();
@@ -73,5 +75,9 @@ export class VocabularyComponent {
       this.rotate="rotateY( 0deg )"
       document.getElementById('contentid')!.style.transform=this.rotate;
     }
+  }
+
+  backtolesson(){
+    this.router.navigate(['members','lessons','chapters']);
   }
 }

@@ -2,8 +2,7 @@
     <mat-drawer #drawer class="example-sidenav" mode="over">
         <div class="sideheader px-3">
 
-            <h3>
-                Classroom</h3>
+            <h3>Chapters</h3>
 
             <mat-icon class="close" aria-hidden="false" aria-label="Example close icon" fontIcon="close"
                 (click)="drawer.toggle();">
@@ -84,7 +83,7 @@
                             <mat-list-item role="listitem" [routerLinkActive]="['active']"
                             (click)="drawer.toggle()">
                                 <a routerLink="/members/lessons/result/{{i}}"
-                                (click)="loadResultValue(i)">
+                                >
                                     
                                     <i class="fa-solid fa-medal"></i>
                                     

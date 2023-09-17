@@ -1,0 +1,16 @@
+<div class="quiz-result">
+  <button type="button"
+  (click)="backtolesson()">back </button><h3>Lesson {{resultResponse.resultResponse.content[0].lessonId}} MCQ Quiz Result  : {{score}} / {{resultResponse.resultResponse.content.length}} </h3>
+    <div *ngFor="let items of resultResponse.resultResponse.content" class="question">
+      <p class="question-text">Q{{items.questionId}}. &nbsp; {{items.question}}</p>
+      <ul class="options">
+        <li [ngClass]="{'correct-answer': items.answer === items.option1}">A. {{items.option1}}</li>
+        <li [ngClass]="{'correct-answer': items.answer === items.option2}">B. {{items.option2}}</li>
+        <li [ngClass]="{'correct-answer': items.answer === items.option3}">C. {{items.option3}}</li>
+        <li [ngClass]="{'correct-answer': items.answer === items.option4}">D. {{items.option4}}</li>
+      </ul>
+      <p [ngClass]="{'correct-answer': items.answer === items.submittedAnswer, 'wrong-answer': items.submittedAnswer !== items.answer}">
+        Your Answer:{{items.submittedAnswer}} </p> 
+    </div>
+  </div>
+  

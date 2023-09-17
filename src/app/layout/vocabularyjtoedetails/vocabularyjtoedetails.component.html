@@ -1,0 +1,29 @@
+<div class="body">
+    <button id="createButton">Create</button>
+    <button id="createButton" (click)="backtochapterdetails()">Back to chapterDetails </button>
+    <table>
+        <thead>
+            <tr>
+                <th>SL.No</th>
+                <th>English</th>
+                <th>Hiragana</th>
+                <th>Kanji</th>
+                <th>Romaji</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor = "let items of vocabularyjtoeDetails.vocabulary; let i = index">
+                <td>{{items.id}}</td>
+                <td>{{items.english_character}}</td>
+                <td>{{items.hiragana_character}}</td>
+                <td>{{items.kanji_character}}</td>
+                <td>{{items.romaji_character}}</td>
+                <td><button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button></td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>

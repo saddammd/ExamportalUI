@@ -1,0 +1,19 @@
+/* modal-dialog.component.css */
+.modal {
+    position:fixed;
+    top: 50%;
+    left: 30%;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,35 @@
+<div class="body">
+    <button id="createButton">Create</button>
+    <button id="createButton" (click)="backtochapterdetails()">Back to chapterDetails </button>
+    <table>
+        <thead>
+            <tr>
+                <th>SL.No</th>
+                <th>Heading</th>
+                <th>Sub Heading 1</th>
+                <th>Grammar</th>
+                <th>Image URL 3</th>
+                <th>Content </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor = "let items of chapterDetails.reading; let i = index">
+                <td>{{items.id}}</td>
+                <td>{{items.heading}}</td>
+                <td>{{items.subheading}}</td>
+                <td>
+                    <ul *ngFor="let gr of items.grammar">
+                    <li>{{gr.content}}</li><hr>
+                </ul>
+                </td>
+                <td>{{items.imageUrl}}</td>
+                <td>{{items.content}}</td>
+                <td><button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button></td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>

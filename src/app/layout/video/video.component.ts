@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
 import { Video } from 'src/app/classes/video';
 import { ExercisesValueService } from 'src/app/services/exercises-value.service';
@@ -20,7 +21,8 @@ export class VideoComponent {
   }
 
   constructor(private exercises: ExercisesValueService,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private router: Router) {
     this.getUrlValue();
     if(this.exercises.VideoValue.value === null){
       this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.exercises.storage.getItem("video")!);
@@ -34,5 +36,9 @@ export class VideoComponent {
       }
       
       );
+    }
+
+    backtolesson(){
+      this.router.navigate(['members','lessons','chapters']);
     }
   }

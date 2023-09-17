@@ -21,6 +21,15 @@ import {MatRadioModule} from '@angular/material/radio';
 import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
 import { VocabularyetojComponent } from './layout/vocabularyetoj/vocabularyetoj.component';
 import { ResultComponent } from './layout/result/result.component';
+import { ResultdetailComponent } from './layout/resultdetail/resultdetail.component';
+import { DialogboxComponent } from './layout/dialogbox/dialogbox.component';
+import { ChapterMgmtComponent } from './layout/chapter-mgmt/chapter-mgmt.component';
+import { ChapterMgmtDetailsComponent } from './layout/chapter-mgmt-details/chapter-mgmt-details.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { QuizdetailsComponent } from './layout/quizdetails/quizdetails.component';
+import { ReadingdetailsComponent } from './layout/readingdetails/readingdetails.component';
+import { VocabularyjtoedetailsComponent } from './layout/vocabularyjtoedetails/vocabularyjtoedetails.component';
+import { VocabularyetojdetailsComponent } from './layout/vocabularyetojdetails/vocabularyetojdetails.component';
 
 
 @NgModule({
@@ -36,6 +45,15 @@ import { ResultComponent } from './layout/result/result.component';
     VocabularyComponent,
     VocabularyetojComponent,
     ResultComponent,
+    ResultdetailComponent,
+    DialogboxComponent,
+    ChapterMgmtComponent,
+    ChapterMgmtDetailsComponent,
+    AdminComponent,
+    QuizdetailsComponent,
+    ReadingdetailsComponent,
+    VocabularyjtoedetailsComponent,
+    VocabularyetojdetailsComponent,
   ],
   imports: [
     BrowserModule,
