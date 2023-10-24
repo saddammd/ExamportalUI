@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Choose } from 'src/app/classes/choose';
 import { Mcq } from 'src/app/classes/mcq';
 import { Result } from 'src/app/classes/result';
 import { ExercisesValueService } from 'src/app/services/exercises-value.service';
@@ -211,6 +210,7 @@ export class ChooseComponent {
     this.resultService.postResultList(this.result).subscribe(
       (response) => {
         console.log(response);
+
       },
 
       (error) => {
@@ -219,8 +219,9 @@ export class ChooseComponent {
 
 
     );
-    this.resultService.openDialog.next(true);
     this.calculateTotal(this.result);
+    this.resultService.openDialog.next(true);    
+ 
   }
 
 }

@@ -17,13 +17,13 @@
                 style=" background-color: #54b689; color: #ffffff; border-radius: 50%; border: 50px solid;">
                 <h3 class="display-6 fw-bold lh-1 mb-3">{{read.heading}}</h3>
                 <p class="lead"><strong>{{read.subheading}}</strong></p>
-                <ul class="grammar" *ngIf="read.grammar !== undefined && read.grammar !== null">
+             <!--   <ul class="grammar" *ngIf="read.grammar !== undefined && read.grammar !== null">
                     <div *ngFor = "let grammarlist of read.grammar">
                     <li>
                         {{grammarlist.content}}
                     </li>
                 </div>
-                </ul>
+                </ul> -->
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
 
                 </div>
@@ -34,10 +34,10 @@
     
     <div class="container" style="background-color: #ffffff;">
         <div class="text-center">
-            <p class="lead" style="color: #28387a; padding-top: 10%;"><strong>
-                    {{read.content}}
-                </strong>
-            </p>
+            <div class="lead" style="color: #28387a; padding-top: 10%;"
+                [innerHTML]="Readingcontent">
+                
+            </div>
             ****************************************************************
         </div>
     </div>

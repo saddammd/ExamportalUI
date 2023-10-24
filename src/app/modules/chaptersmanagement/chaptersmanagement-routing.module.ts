@@ -4,7 +4,8 @@ import { ChapterMgmtComponent } from 'src/app/layout/chapter-mgmt/chapter-mgmt.c
 
 const routes: Routes = [
   {
-    path: '', component:ChapterMgmtComponent
+    path: '', component:ChapterMgmtComponent,
+    
   }
 ];
 

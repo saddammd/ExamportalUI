@@ -1,5 +1,6 @@
 export interface Mcq {
 
+   lesson_id:number,
    id: number,
    question:string,
    option1:string,
@@ -7,7 +8,6 @@ export interface Mcq {
    option3:string,
    option4:string,
    answer:string,
-   createdDate: string,
-   updatedDate: string
+   
 
 }

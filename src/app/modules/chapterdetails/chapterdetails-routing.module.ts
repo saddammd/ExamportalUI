@@ -4,9 +4,17 @@ import { ChapterMgmtDetailsComponent } from 'src/app/layout/chapter-mgmt-details
 
 const routes: Routes = [
   {
-    path: '', component:ChapterMgmtDetailsComponent
+    path: '', component:ChapterMgmtDetailsComponent,
+    children:[
+      {
+        path:'manage',
+        loadChildren:()=>import('../manage/manage-routing.module').then(m=>m.ManageRoutingModule)
+      },
+      
+]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,13 +1,11 @@
 import { Grammar } from "./grammar"
 
-export interface Reading {
+export class Reading {
 
-    id: number,
-    subheading: string,
-    heading: string,
-    imageUrl: string,
-    content: string,
-    grammar: Grammar[]
-    createdDate: string,
-    updatedDate: string
+    id!: number;
+    lessonId!: number;
+    subheading!: string;
+    heading!: string;
+    imageUrl!: string;
+    content!: string;
 }

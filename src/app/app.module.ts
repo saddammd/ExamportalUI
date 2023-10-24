@@ -26,10 +26,17 @@ import { DialogboxComponent } from './layout/dialogbox/dialogbox.component';
 import { ChapterMgmtComponent } from './layout/chapter-mgmt/chapter-mgmt.component';
 import { ChapterMgmtDetailsComponent } from './layout/chapter-mgmt-details/chapter-mgmt-details.component';
 import { AdminComponent } from './layout/admin/admin.component';
-import { QuizdetailsComponent } from './layout/quizdetails/quizdetails.component';
 import { ReadingdetailsComponent } from './layout/readingdetails/readingdetails.component';
 import { VocabularyjtoedetailsComponent } from './layout/vocabularyjtoedetails/vocabularyjtoedetails.component';
 import { VocabularyetojdetailsComponent } from './layout/vocabularyetojdetails/vocabularyetojdetails.component';
+import { CreatechapterdialogComponent } from './layout/createchapterdialog/createchapterdialog.component';
+import { FormsModule } from '@angular/forms';
+import { VideoTamildetailsComponent } from './layout/video-tamildetails/video-tamildetails.component';
+import { VideoHindidetailsComponent } from './layout/video-hindidetails/video-hindidetails.component';
+import { McqDetailsComponent } from './layout/mcq-details/mcq-details.component';
+import { DetailsComponent } from './layout/details/details.component';
+import { ManageComponent } from './layout/manage/manage.component';
+
 
 
 @NgModule({
@@ -50,10 +57,16 @@ import { VocabularyetojdetailsComponent } from './layout/vocabularyetojdetails/v
     ChapterMgmtComponent,
     ChapterMgmtDetailsComponent,
     AdminComponent,
-    QuizdetailsComponent,
     ReadingdetailsComponent,
     VocabularyjtoedetailsComponent,
     VocabularyetojdetailsComponent,
+    CreatechapterdialogComponent,
+    VideoTamildetailsComponent,
+    VideoHindidetailsComponent,
+    McqDetailsComponent,
+    DetailsComponent,
+    ManageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -65,7 +78,8 @@ import { VocabularyetojdetailsComponent } from './layout/vocabularyetojdetails/v
     MatListModule,
     MatRadioModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    FormsModule
 
   ],
   providers: [],

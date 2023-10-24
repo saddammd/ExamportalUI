@@ -7,30 +7,43 @@ const routes: Routes = [
   {path:'', component: AdminComponent,
   children:[
     {
-      path:'chapterdetails', 
-      loadChildren:()=>import('../chapterdetails/chapterdetails.module').then(m=>m.ChapterdetailsModule)
-    },
-
-    {
       path:'chaptersmanagement', 
       loadChildren:()=>import('../chaptersmanagement/chaptersmanagement.module').then(m=>m.ChaptersmanagementModule)
     },
     {
-      path:'quizdetails', 
-      loadChildren:()=>import('../quizdetails/quizdetails.module').then(m=>m.QuizdetailsModule)
+      path:'chaptersmanagement/details', 
+      loadChildren:()=>import('../details/details.module').then(m=>m.DetailsModule)
+    },
+    
+    {
+      path:'videoTamilDetails', 
+      loadChildren:()=>import('../video-tamil-details/video-tamil-details.module').then(m=>m.VideoTamilDetailsModule)
     },
     {
-      path:'readingdetails', 
-      loadChildren:()=>import('../readingdetails/readingdetails.module').then(m=>m.ReadingdetailsModule)
+      path:'videoHindiDetails', 
+      loadChildren:()=>import('../video-hindi-details/video-hindi-details.module').then(m=>m.VideoHindiDetailsModule)
     },
     {
-      path:'vocabularyetojdetails', 
-      loadChildren:()=>import('../vocabularyetojdetails/vocabularyetojdetails.module').then(m=>m.VocabularyetojdetailsModule)
+      path:'chaptersmanagement/details/chapterdetails/:id/mcqDetails', 
+      loadChildren:()=>import('../mcq-details/mcq-details.module').then(m=>m.McqDetailsModule)
     },
     {
-      path:'vocabularyjtoedetails', 
+      path:'chaptersmanagement/details/chapterdetails/:id',
+      loadChildren:()=>import('../chapterdetails/chapterdetails.module').then(m=>m.ChapterdetailsModule)
+    },
+    {
+        path:'chaptersmanagement/details/chapterdetails/:id/readingdetails', 
+        loadChildren:()=>import('../readingdetails/readingdetails.module').then(m=>m.ReadingdetailsModule)
+    },
+    {
+      path:'chaptersmanagement/details/chapterdetails/:id/vocabularyjtoedetails', 
       loadChildren:()=>import('../vocabularyjtoedetails/vocabularyjtoedetails.module').then(m=>m.VocabularyjtoedetailsModule)
     },
+    {
+      path:'chaptersmanagement/details/chapterdetails/:id/vocabularyetojdetails', 
+      loadChildren:()=>import('../vocabularyetojdetails/vocabularyetojdetails.module').then(m=>m.VocabularyetojdetailsModule)
+    },
+   
   ]
 }
 ];

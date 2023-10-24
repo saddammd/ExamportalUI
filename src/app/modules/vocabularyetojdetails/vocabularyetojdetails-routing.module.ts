@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VocabularyetojComponent } from 'src/app/layout/vocabularyetoj/vocabularyetoj.component';
-import { VocabularyjtoedetailsComponent } from 'src/app/layout/vocabularyjtoedetails/vocabularyjtoedetails.component';
+import { VocabularyetojdetailsComponent } from 'src/app/layout/vocabularyetojdetails/vocabularyetojdetails.component';
 
 const routes: Routes = [
 
   {
-    path:'', component:VocabularyjtoedetailsComponent
+    path:'', component:VocabularyetojdetailsComponent
   }
 
 ];

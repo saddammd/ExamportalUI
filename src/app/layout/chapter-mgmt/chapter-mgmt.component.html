@@ -1,13 +1,12 @@
 <div class="body">
-    <button id="createButton">Create</button>
+    <app-createchapterdialog></app-createchapterdialog>
     <table>
         <thead>
             <tr>
                 <th>SL.No</th>
                 <th>Chapter Name</th>
-                <th>Edit</th>
                 <th>View Details</th>
-                <th>Delete</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -15,11 +14,48 @@
             <tr *ngFor = "let items of chaptersData.data.content; let i = index">
                 <td>{{items.id}}</td>
                 <td>{{items.name}}</td>
-                <td><a href="#">Edit</a></td>
-                <td><a routerLink="/members/admin/chapterdetails" (click)="loadDetails(items)">View Details</a></td>
-                <td><button class="delete-button">Delete</button></td>
+                
+                <td><a routerLink="/members/admin/chaptersmanagement/details/chapterdetails/{{items.id}}" (click)="loadDetails(items)">View Details</a></td>
+                <td><button class="delete-button" (click)="editChapter(items.id)" data-bs-toggle="modal" data-bs-target="#myEditChapterModal">Edit</button>
+                <button class="delete-button">Delete</button></td>
             </tr>
            
         </tbody>
     </table>
 </div>
+
+
+<!-- Edit Dialog box Start-->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myEditChapterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Edit Chapter Name </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!--Insert Form Code Start-->
+                <form #chapterForm="ngForm" (ngSubmit)="onSubmit(chapterForm)">
+                    <div class="mb-3 row">
+                        <label for="chapterName" class="col-sm-2 col-form-label">Chapter Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="chapterName" placeholder="Enter chapter name" name="chapterName" [(ngModel)]="editChapterName.name" required>
+                            <input type="hidden" class="form-control" id="chapterId"  name="chapterId" [(ngModel)]="editChapterName.id" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Save</button>
+                    </div>
+                </form>
+                <!--Insert Form Code End-->
+            </div>
+        </div>
+    </div>
+
+    <!--End of Edit Dialog box-->

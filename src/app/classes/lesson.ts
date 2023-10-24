@@ -7,6 +7,7 @@ import { Vocabularyetoj } from "./vocabularyetoj";
 
 export interface Lesson {
 
+    
     id: number,
     name: string,
     video:Video[],

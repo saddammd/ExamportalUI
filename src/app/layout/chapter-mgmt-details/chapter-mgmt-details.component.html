@@ -1,5 +1,5 @@
 <div class="body">
-    <button id="createButton">Create</button>
+    <button id="createButton" (click)="backtochapterManagement()">Back to chapterDetails </button>
     <table>
         <thead>
             <tr>
@@ -12,23 +12,35 @@
             
             <tr>
                 <td>1</td>
-                <td>Quiz</td>
-                <td><a routerLink="/members/admin/quizdetails">View Details</a></td>
+                <td>Video Hindi</td>
+                <td><button class="btn btn-primary" (click)="navigateToHindiVideo()">View Details</button></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Reading</td>
-                <td><a routerLink="/members/admin/readingdetails">View Details</a></td>
+                <td>Video Tamil</td>
+                <td><button class="btn btn-primary" (click)="navigateToTamilVideo()">View Details</button></td>
             </tr>
+
             <tr>
                 <td>3</td>
-                <td>Vocabulary E to J</td>
-                <td><a routerLink="/members/admin/vocabularyetojdetails">View Details</a></td>
+                <td>MCQ</td>
+                <td><button class="btn btn-primary" (click)="navigateToMcq()">View Details</button></td>
             </tr>
+
             <tr>
                 <td>4</td>
+                <td>Reading</td>
+                <td><button class="btn btn-primary" (click)="navigateToReading()">View Details</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Vocabulary E to J</td>
+                <td><button class="btn btn-primary" (click)="navigateToVocabularyEtoJ()">View Details</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
                 <td>Vocabulary J to E</td>
-                <td><a routerLink="/members/admin/vocabularyjtoedetails">View Details</a></td>
+                <td><button class="btn btn-primary" (click)="navigateToVocabularyJtoE()">View Details</button></td>
             </tr>
             
            

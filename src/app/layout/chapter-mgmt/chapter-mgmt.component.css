@@ -3,6 +3,7 @@
     text-align: center;
     margin: 0;
     padding: 20px;
+    background-color: #ffffff;
 }
 
 button {
@@ -47,4 +48,8 @@ table th {
 
 .edit-button:hover {
     text-decoration: underline;
+}
+
+.btn-secondary{
+    background-color: #6c757d;
 }
